@@ -1,0 +1,89 @@
+@import "tailwindcss";
+
+@page {
+    margin: 1.5cm;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    line-height: 1.6;
+    max-width: 210mm;
+    margin: 0 auto;
+    padding: 2rem;
+    color: #000;
+    background: #fff;
+}
+
+h1 {
+    color: #1a56db;
+    margin-bottom: 0.5rem;
+}
+
+h2 {
+    color: #1e3a8a;
+    border-bottom: 2px solid #d1d5db;
+    padding-bottom: 0.5rem;
+    margin-top: 2rem;
+}
+
+.header {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+    margin-bottom: 2rem;
+}
+
+.contact-info {
+    margin-bottom: 1rem;
+}
+
+.section {
+    margin-bottom: 2rem;
+}
+
+.experience-item {
+    margin-bottom: 1.5rem;
+    padding-left: 1rem;
+    border-left: 3px solid #1a56db;
+}
+
+
+.grid-2 {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+}
+
+a {
+    color: #1a56db;
+    text-decoration: none;
+}
+
+img {
+    border-radius: 50%;
+    border: 3px solid #1a56db;
+}
+
+.badge {
+    display: inline-block;
+    padding: 0.2rem 0.55rem;
+    border-radius: 9999px;
+    font-size: 0.8rem;
+    line-height: 1;
+    border: 1px solid #d1d5db;
+    color: #111827;
+    background: #f3f4f6;
+    white-space: nowrap;
+}
+
+.badge-primary {
+    color: #ffffff;
+    background-color: #1a56db; /* matches h1 color */
+    border-color: #1a56db;
+}
+
+.badge-secondary {
+    color: #111827;
+    background-color: #e0e7ff; /* soft indigo background */
+    border-color: #c7d2fe;
+}

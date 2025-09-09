@@ -1,0 +1,87 @@
+---
+import '../styles/text.css';
+import {Image} from "astro:assets";
+import cvImg from "/public/adji.webp"
+import {model} from "../model";
+const {
+    name, jobTitle, city, country, email, githubProfiles,
+    linkedinProfile, telegram, summary, telegramUser, skills, languages, education, experiences,
+} = model;
+---
+
+<html lang="en">
+<head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <title>Andres Adjimann</title>
+</head>
+<body>
+<div>
+    <header class="header">
+        <div>
+            <Image alt="Portrait" fit="cover" src={cvImg} width={96} height={96}/>
+        </div>
+        <div>
+            <h1>{name}</h1>
+            <p>{jobTitle} • {city}, {country}</p>
+            <div class="contact-info">
+                <a href={`mailto:${email}`}>{email}</a> •
+                <a href={linkedinProfile} target="_blank">LinkedIn</a> •
+                <a href={telegram} target="_blank">Telegram</a>
+                {githubProfiles.map((p) => (
+                        <span> • <a href={p.url} target="_blank">GitHub {p.name}</a></span>
+                ))}
+            </div>
+        </div>
+    </header>
+
+    <section class="section">
+        <h2>Professional Summary</h2>
+        <div>
+            {summary.map(s => <p>{s}</p>)}
+        </div>
+    </section>
+
+    <section class="section">
+        <h2>Skills</h2>
+        <div>
+            {skills.map(s =>  <span class:list={['badge', s.class]}>{s.name}</span>)}
+        </div>
+    </section>
+
+    <section class="section">
+        <h2>Languages</h2>
+        <div>
+            {languages.map(l => (
+                    <div>{l.name} - {l.level}</div>
+            ))}
+        </div>
+    </section>
+
+    <section class="section">
+        <h2>Education</h2>
+        {education.map(e => (
+                <div>{e}</div>
+        ))}
+    </section>
+
+    <section class="section">
+        <h2>Experience</h2>
+        {experiences.map(e => (
+                <div class="experience-item">
+                    <h3>{e.position} - {e.company}</h3>
+                    <p>{e.range_from} — {e.range_to} | {e.location}</p>
+                    <ul>
+                        {e.description.map(d => (
+                                <li>{d}</li>
+                        ))}
+                        {e.link && (
+                                <li>Link: <a href={e.link.url} target="_blank">{e.link.name}</a></li>
+                        )}
+                    </ul>
+                </div>
+        ))}
+    </section>
+</div>
+</body>
+</html>
