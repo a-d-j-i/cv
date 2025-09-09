@@ -10,6 +10,7 @@ import Contact from "../components/contact.astro";
 import Experience from "../components/experience.astro";
 import Summary from "../components/summary.astro";
 import {model} from "../model";
+import ThemeController from "../components/themeController.astro";
 const {
     name, jobTitle, city, country, email, githubProfiles,
     linkedinProfile, telegram
@@ -18,7 +19,12 @@ const {
 
 <Layout>
     <!-- Header / hero -->
-    <section class="hero bg-base-100 border rounded-box p-6 mb-6">
+    <section class="hero bg-base-100 border rounded-box p-6 mb-6 relative">
+        <div class="absolute bottom-1 right-1">
+            <a class="btn btn-ghost btn-sm" href="/cv/cv.pdf" target="_blank" rel="noopener">PDF</a>
+            <a class="btn btn-ghost btn-sm" href="/cv/text" target="_blank" rel="noopener">Printable</a>
+            <ThemeController/>
+        </div>
         <div class="hero-content flex-col lg:flex-row gap-6">
             <div class="avatar">
                 <div class="w-24 rounded-full ring ring-primary ring-offset-base-100 ring-offset-2">
