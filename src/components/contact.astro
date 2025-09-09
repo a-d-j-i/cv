@@ -1,0 +1,33 @@
+---
+import {data} from "../data";
+const {name, email, country, linkedinProfile, telegram, telegramUser, githubProfiles} = data;
+---
+<div class="card bg-base-100 border">
+    <div class="card-body">
+        <h2 class="card-title">Contact</h2>
+        <div class="flex flex-col gap-2 text-sm">
+            <div class="flex items-center gap-2">
+                <span class="badge badge-outline">Email</span>
+                <a class="link" href={`mailto:${email}`}>{email}</a>
+            </div>
+            <div class="flex items-center gap-2">
+                <span class="badge badge-outline">Country</span>
+                <span>{country}</span>
+            </div>
+            <div class="flex items-center gap-2">
+                <span class="badge badge-outline">LinkedIn</span>
+                <a class="link" href={linkedinProfile} target="_blank" rel="noopener">{name}</a>
+            </div>
+            <div class="flex items-center gap-2">
+                <span class="badge badge-outline">Telegram</span>
+                <a class="link" href={telegram} target="_blank" rel="noopener">{telegramUser}</a>
+            </div>
+            {githubProfiles.map((p: { name: string, url: string }) =>
+                    <div class="flex items-center gap-2">
+                        <span class="badge badge-outline">GitHub</span>
+                        <a class="link" href={p.url} target="_blank" rel="noopener">{p.name}</a>
+                    </div>
+            )}
+        </div>
+    </div>
+</div>

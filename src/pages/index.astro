@@ -1,0 +1,58 @@
+---
+import '../styles/global.css';
+import '../styles/global.css';
+import Layout from "../layouts/Layout.astro";
+import {Image} from "astro:assets";
+import cvImg from "/public/adji.webp"
+import Education from "../components/education.astro";
+import Languages from "../components/languages.astro";
+import Skills from "../components/skills.astro";
+import Contact from "../components/contact.astro";
+import Experience from "../components/experience.astro";
+import Summary from "../components/summary.astro";
+import {data} from "../data";
+const {
+    name, jobTitle, city, country, email, githubProfiles,
+    linkedinProfile, telegram
+} = data;
+---
+
+<Layout>
+    <!-- Header / hero -->
+    <section class="hero bg-base-100 border rounded-box p-6 mb-6">
+        <div class="hero-content flex-col lg:flex-row gap-6">
+            <div class="avatar">
+                <div class="w-24 rounded-full ring ring-primary ring-offset-base-100 ring-offset-2">
+                    <Image alt="Portrait" fit="cover" src={cvImg} width={96} height={96}/>
+                </div>
+            </div>
+            <div class="flex-1">
+                <h1 class="text-3xl font-bold">{name}</h1>
+                <p class="text-base-content/70">{jobTitle} • {city}, {country}</p>
+                <div class="mt-4 flex flex-wrap gap-2">
+                    <a class="btn btn-primary btn-sm" href={`mailto:${email}`}>Contact</a>
+                    <a class="btn btn-ghost btn-sm" href={linkedinProfile} target="_blank" rel="noopener">LinkedIn</a>
+                    <a class="btn btn-ghost btn-sm" href={telegram} target="_blank" rel="noopener">Telegram</a>
+                    {githubProfiles.map((p: { name: string, url: string }) =>
+                            <a class="btn btn-ghost btn-sm" href={p.url} target="_blank"
+                               rel="noopener">GitHub {p.name}</a>
+                    )}
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Content -->
+    <div class="grid gap-6 w-full">
+        <Summary/>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 w-full">
+            <Contact/>
+            <Skills/>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 w-full">
+            <Languages/>
+            <Education/>
+        </div>
+        <Experience/>
+    </div>
+</Layout>
