@@ -1,19 +1,17 @@
+---
+import {model} from "../model";
+const {languages} = model;
+---
 <div class="card bg-base-100 border">
     <div class="card-body">
         <h2 class="card-title">Languages</h2>
         <ul class="space-y-2 text-sm">
-            <li class="flex justify-between">
-                <span>Spanish</span>
-                <span class="badge badge-outline">Native</span>
-            </li>
-            <li class="flex justify-between">
-                <span>English</span>
-                <span class="badge badge-outline">Intermediate</span>
-            </li>
-            <li class="flex justify-between">
-                <span>Hebrew</span>
-                <span class="badge badge-outline">Intermediate</span>
-            </li>
+            {languages.map((l: { name: string, level: string }) =>
+                    <li class="flex items-center gap-2">
+                        <span>{l.name}</span>
+                        <span class="badge badge-outline">{l.level}</span>
+                    </li>
+            )}
         </ul>
-    </div>
+    </>
 </div>

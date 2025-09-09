@@ -1,4 +1,4 @@
-export const data = {
+export const model = {
     name: "Andrés Adjimann",
     jobTitle: "Security-focused Software Engineer",
     city: "CABA",
@@ -14,5 +14,15 @@ export const data = {
         {
             name: "adjisb",
             url: "https://github.com/adjisb",
-        }]
+        }],
+    education: [
+        "Bachelor’s degree in Physics — Facultad de Ciencias Exactas, Universidad de Buenos Aires (UBA)",
+        "High School: Electronic Technician — Escuela Técnica O.R.T II"
+    ],
+    languages: [
+        {name: "Spanish", level: "Native"},
+        {name: "English", level: "Intermediate"},
+        {name: "Hebrew", level: "Intermediate"},
+    ]
+
 }

@@ -1,13 +1,16 @@
+---
+import {model} from "../model";
+const {education} = model;
+---
 <div class="card bg-base-100 border">
     <div class="card-body">
         <h2 class="card-title">Education</h2>
         <div class="flex flex-col gap-4">
-            <div>
-                <h3 class="font-semibold">Bachelor’s degree in Physics — Facultad de Ciencias Exactas, Universidad de Buenos Aires (UBA)</h3>
-            </div>
-            <div>
-                <h3 class="font-semibold">High School: Electronic Technician — Escuela Técnica O.R.T II</h3>
-            </div>
+            {education.map((e: string) =>
+                    <div>
+                        <h3 class="font-semibold">{e}</h3>
+                    </div>
+            )}
         </div>
     </div>
 </div>
