@@ -1,56 +1,14 @@
+---
+import {model} from "../model";
+const {skills} = model;
+---
 <div class="card bg-base-100 border">
     <div class="card-body">
         <h2 class="card-title">Skills</h2>
         <div class="flex flex-wrap gap-2">
-            <span class="badge badge-primary">Security</span>
-            <span class="badge badge-primary">Smart Contracts</span>
-            <span class="badge">Windows Drivers</span>
-            <span class="badge">Infrastructure</span>
-            <span class="badge">Automation</span>
-            <span class="badge">Defensive Eng</span>
-
-            <div class="divider my-1"></div>
-
-            <span class="badge badge-secondary">Solidity</span>
-            <span class="badge badge-secondary">TypeScript/JS</span>
-            <span class="badge badge-secondary">Python</span>
-            <span class="badge badge-secondary">C/C++</span>
-            <span class="badge badge-secondary">ASM</span>
-            <span class="badge badge-secondary">Java</span>
-            <span class="badge badge-secondary">PHP</span>
-
-            <div class="divider my-1"></div>
-
-            <span class="badge">Node.js</span>
-            <span class="badge">React</span>
-            <span class="badge">Play 1.2.7</span>
-            <span class="badge">Oracle ADF</span>
-            <span class="badge">Struts</span>
-            <span class="badge">GWT</span>
-            <span class="badge">Android</span>
-
-            <div class="divider my-1"></div>
-
-            <span class="badge">PostgreSQL</span>
-            <span class="badge">MySQL</span>
-            <span class="badge">Oracle DB</span>
-            <span class="badge">Pentaho</span>
-            <span class="badge">JMS</span>
-            <span class="badge">ActiveMQ</span>
-            <span class="badge">Apache Camel</span>
-            <span class="badge">JBoss/Tomcat</span>
-
-            <div class="divider my-1"></div>
-
-            <span class="badge">Windows kernel/user</span>
-            <span class="badge">Linux/Windows admin</span>
-            <span class="badge">PIC microcontrollers</span>
-
-            <div class="divider my-1"></div>
-
-            <span class="badge">git</span>
-            <span class="badge">Shell scripting</span>
-            <span class="badge">Deployment pipelines</span>
+            {skills.map(s =>
+                    <span class:list={['badge', s.class]}>{s.name}</span>
+            )}
         </div>
     </div>
 </div>

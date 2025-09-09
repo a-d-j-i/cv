@@ -6,7 +6,7 @@ const {languages} = model;
     <div class="card-body">
         <h2 class="card-title">Languages</h2>
         <ul class="space-y-2 text-sm">
-            {languages.map((l: { name: string, level: string }) =>
+            {languages.map(l =>
                     <li class="flex items-center gap-2">
                         <span>{l.name}</span>
                         <span class="badge badge-outline">{l.level}</span>

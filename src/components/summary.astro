@@ -1,16 +1,12 @@
+---
+import {model} from "../model";
+const {summary} = model;
+---
 <div class="card bg-base-100 border">
     <div class="card-body">
         <h2 class="card-title">Professional Summary</h2>
         <div class="leading-relaxed space-y-3">
-            <p>Highly skilled security-focused software engineer with extensive hands-on experience in
-                systems architecture and backend development, smart contract development and blockchain
-                systems, infrastructure automation and system administration, and low-level systems
-                programming.</p>
-            <p>Proven track record of designing and hardening low-level Windows drivers, building secure,
-                production-grade infrastructure, implementing robust blockchain systems with comprehensive
-                testing, and developing automated deployment pipelines.</p>
-            <p>Technical expertise in multiple languages including: Solidity, TypeScript, Python, Java, PHP,
-                C/C++, and Assembly.</p>
+            {summary.map(s => <p>{s}</p>)}
         </div>
     </div>
 </div>

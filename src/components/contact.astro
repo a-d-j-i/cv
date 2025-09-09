@@ -22,7 +22,7 @@ const {name, email, country, linkedinProfile, telegram, telegramUser, githubProf
                 <span class="badge badge-outline">Telegram</span>
                 <a class="link" href={telegram} target="_blank" rel="noopener">{telegramUser}</a>
             </div>
-            {githubProfiles.map((p: { name: string, url: string }) =>
+            {githubProfiles.map(p =>
                     <div class="flex items-center gap-2">
                         <span class="badge badge-outline">GitHub</span>
                         <a class="link" href={p.url} target="_blank" rel="noopener">{p.name}</a>
